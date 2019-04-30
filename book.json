@@ -1,0 +1,36 @@
+{
+    "title": "Solr官方指南(中文版)",
+    "author": "charles.zhang",
+    "language": "zh-hans",
+    "plugins": [
+        "splitter",
+        "anchor-navigation-ex",
+        "-sharing",
+        "sharing-plus",
+        "chapter-fold",
+        "baidu",
+        "-search"
+    ],
+    "pluginsConfig": {
+        "sharing": {
+            "douban": true,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "qq": false,
+            "qzone": true,
+            "twitter": false,
+            "weibo": false,
+            "whatsapp": false,
+            "all": [
+                "weibo",
+                "qq",
+                "qzone",
+                "douban"
+            ]
+        },
+        "baidu":{
+            "token":"baidutoken"
+        }
+    }
+}
