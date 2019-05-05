@@ -1,11 +1,14 @@
-## 使用AsciiDoc文件 
-<div class="content-intro view-box "><h2>AsciiDoc语法表  
-</h2>AsciiDoc语法的权威手册在“Asciidoctor用户手册”中。但是，为了帮助人们开始，这里提供一个简单的语法表。  
+# 使用AsciiDoc文件
+
+## AsciiDoc语法表
+
+AsciiDoc语法的权威手册在“Asciidoctor用户手册”中。但是，为了帮助人们开始，这里提供一个简单的语法表。  
   
 ### AsciiDoc与Asciidoctor语法
 我们使用Asciidoctor项目中的工具来构建Ref Guide的HTML和PDF版本。Asciidoctor是原来的AsciiDoc项目的Ruby端口，几年前这个项目大部分都被抛弃了。  
   
-虽然这两者之间的大部分语法都是相同的，但AsciiDoc支持AsciiDoc中不存在的许多约定。虽然Asciidoctor项目试图提供与旧项目的后向兼容性，但这可能永远不会是真的。出于这个原因，强烈建议只使用Asciidoctor用户手册作为任何在这里没有描述的语法的参考。  
+虽然这两者之间的大部分语法都是相同的，但AsciiDoc支持AsciiDoc中不存在的许多约定。虽然Asciidoctor项目试图提供与旧项目的后向兼容性，但这可能永远不会是真的。出于这个原因，强烈建议只使用Asciidoctor用户手册作为任何在这里没有描述的语法的参考。
+
 ### 基本的AsciiDoc语法
 
 ##### 加粗（Bold）
@@ -22,11 +25,13 @@
 使用反引号`来表示应该是等宽的文本，例如段落主体中的代码或类名称。  
 更多信息：http://asciidoctor.org/docs/user-manual/#mono  
 更长的代码示例可以用source块与文本分开。这些允许定义正在使用的语法，以便代码正确地突出显示。  
-示例源块：  
+示例源块：
+
 ```
 [source,xml]
 &lt;field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /&gt;
 ```
+
 如果您的代码块将包含换行符，请在整个块之前和之后放置4个连字符（----）。  
 更多信息：http://asciidoctor.org/docs/user-manual/#source-code-blocks  
 ###### 源块语法高亮（Source Block Syntax Highlighting）
@@ -37,28 +42,28 @@ Pygments有很多可用的词法分析器。你可以在http://pygments.org/docs
 ### 块标题（Block Titles）
 标题可以通过用句号（.）初始化标题来添加到大多数块（图像，源块，表格等）。例如，要为上面的源代码块添加一个标题：  
   
-  
-```
+```xml
 .Example ID field
 [source,xml]
-&lt;field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /&gt;
+<field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />;
 ```
+
 ### 链接（Links）
 
 #### 链接到互联网上的网站
 将内容转换为HTML或PDF时，Asciidoctor将自动呈现许多链接类型（例如http:和mailto:），而无需任何其他语法。  
-但是，您可以通过添加URI后跟方括号来为链接添加名称：  
-```
-http://lucene.apache.org/solr[Solr Website]
-```
+但是，您可以通过添加URI后跟方括号来为链接添加名称：http://lucene.apache.org/solr[Solr Website]
+
 #### 链接到其他页面/部分
 预先警告，链接到其他页面可能会有点难。根据您要创建的链接类型以及您要链接的位置，规则略有不同。  
   
 构建过程包括对内部或页面间链接的验证，所以如果您可以在本地构建文档，则可以使用它来验证是否正确构建了链接（或者在提交后注意Jenkins构建）。  
-通过以下所有示例，您可以添加文本以显示链接标题，方法是在节参考后面跟随显示文本添加逗号，如下所示：  
+通过以下所有示例，您可以添加文本以显示链接标题，方法是在节参考后面跟随显示文本添加逗号，如下所示：
+
 ```
-&lt;&lt;schema-api.adoc#modify-the-schema,Modify the Schema&gt;&gt;
+<<schema-api.adoc#modify-the-schema,Modify the Schema>>;
 ```
+
 #### 链接到同一页上的部分
 如果要链接到同一页面上的定位点（或节标题），则可以简单地在要链接的定位点/标题/节标题周围使用双角括号（&lt;&lt; &gt;&gt;）。任何部分标题（以等号开头的标题）在转换过程中自动成为锚点，可用于深层链接。  
   
@@ -171,13 +176,15 @@ AsciiDoc支持三种类型的列表：
 ### 表（Tables）
 表格可能很复杂，但要制作一个适合大多数需求的基本表格非常简单。  
 #### 基本表
-表格的基本结构与Markdown类似，管道（|）分隔行之间的列：  
+表格的基本结构与Markdown类似，管道（|）分隔行之间的列：
+
 ```
 |===
 | col 1 row 1 | col 2 row 1|
 | col 1 row 2 | col 2 row 2|
 |===
 ```
+
 注意|===在开始和结束时的使用。对于不完全需要的基本表格，但它确实有助于划分表格的开始和结束，以防意外地在行之间引入（或者更喜欢）空格。  
 #### 标题行
 要为表添加标题，只需要header在表的开始处设置属性：  

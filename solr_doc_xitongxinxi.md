@@ -1,6 +1,6 @@
-## Solr系统信息 
-<div class="content-intro view-box ">
-## Solr 版本信息
+# 查看Solr系统信息 
+
+## 查看Solr版本信息
 
 version 命令只是返回当前安装的 Solr 版本，并且立即存在。  
   
@@ -9,19 +9,18 @@ $ bin/solr version
 X.Y.0
 ```
 
-## Solr 状态信息
-
-### <a href="http://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html#status"/>
+## 查看Solr状态
 
 status 命令显示在本地系统上运行的任何 Solr 节点的基本 JSON 格式的信息。  
-  
-status 命令使用 SOLR_PID_DIR 环境变量来定位 Solr 进程 ID 文件以查找正在运行的 Solr 实例，默认情况下是 bin 目录。  
+status 命令使用 SOLR_PID_DIR 环境变量来定位 Solr 进程 ID 文件以查找正在运行的 Solr 实例，默认情况下是 bin 目录。
+
 ```
 bin/solr status
 ```
-输出将包含群集中每个节点的状态，如下例所示：  
-```
-找到2个 Solr 节点:
+
+输出将包含群集中每个节点的状态，如下所示(找到2个 Solr 节点)：
+
+```json
 Solr process 39920 running on port 7574
 {
   "solr_home":"/Applications/Solr/example/cloud/node2/solr/",
@@ -46,41 +45,29 @@ Solr process 39827 running on port 8865
     "collections":"2"}}
 ```
 
-## Healthcheck
-在 SolrCloud 模式下运行时，healthcheck 命令将为集合生成 JSON 格式的运行状况报告。运行状况报告提供有关集合中所有碎片的每个副本状态的信息，包括已提交文档的数量及其当前状态。  
-```
+## 健康检查Healthcheck
+
+在 SolrCloud 模式下运行时，healthcheck 命令将为集合生成 JSON 格式的运行状况报告。运行状况报告提供有关集合中所有碎片的每个副本状态的信息，包括已提交文档的数量及其当前状态。
+
+```sh
 bin/solr healthcheck [options]
 bin/solr healthcheck -help
 ```
 
 ### 健康检查参数
 
-#### <a href="http://lucene.apache.org/solr/guide/7_0/solr-control-script-reference.html#healthcheck-parameters"/>
+**-c &lt;collection&gt;**  
+（要求）运行健康检查的集合的名称。示例：bin/solr healthcheck -c gettingstarted
 
-**-c &lt;collection&gt;**
-    
-        （要求）运行健康检查的集合的名称。例如：  
-```
-bin/solr healthcheck -c gettingstarted
-```
-          
-    
-**-z &lt;zkhost&gt;**
-    
-        ZooKeeper 连接字符串，默认为<code>localhost:9983</code>。如果您在8983以外的端口上运行 Solr，则必须指定 ZooKeeper 连接字符串。默认情况下，这将是 Solr 端口 + 1000。例如：  
-```
-bin/solr healthcheck -z localhost:2181
-```
-          
-    
+**-z &lt;zkhost&gt;**  
+ZooKeeper 连接字符串，默认为localhost:9983。如果您在8983以外的端口上运行 Solr，则必须指定ZooKeeper连接字符串。默认情况下，这将是 Solr端口 + 1000。示例：bin/solr healthcheck -z localhost:2181
+以下是使用非标准 ZooKeeper 连接字符串运行的 healthcheck 请求和响应示例，其中包含2个节点：
 
-以下是使用非标准 ZooKeeper 连接字符串运行的 healthcheck 请求和响应示例，其中包含2个节点：  
 ```
 $ bin/solr healthcheck -c gettingstarted -z localhost:9865
 ```
-    
-  
-```
+
+```json
 {
   "collection":"gettingstarted",
   "status":"healthy",
