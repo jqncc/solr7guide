@@ -1,9 +1,9 @@
 # 使用Solr管理用户界面
 
-本章节讨论 Solr 管理用户界面（“管理 UI”）。  
+本章节讨论Solr管理用户界面（“管理 UI”）
+
 Solr 的管理用户界面的概述解释了用户界面的基本功能，什么是初始管理UI页面，以及如何在接口上配置。另外，还有一些页面描述了管理功能的每个界面：  
 
-- [获取帮助](solr_doc_gettingssistance.md)：向您展示如何获取有关 UI 的更多信息。
 - [Solr日志记录](solr_doc_rizhijilu.md)：显示由此 Solr 节点记录的最新消息，并提供了一种更改特定类的日志记录级别的方法。
 - [Cloud界面](solr_doc_cloudscreen.md)以 SolrCloud 模式运行时，Cloud界面显示有关节点的信息。
 - [Collections/Core管理界面](solr_doc_collcoreadmin.md) Collections/Core管理基本功能。

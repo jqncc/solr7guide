@@ -1,8 +1,7 @@
-## Hadoop身份验证插件 
+# Hadoop身份验证插件 
 
-<div class="content-intro view-box ">Hadoop身份验证插件使Solr能够使用Hadoop身份验证库来保护Solr节点。
-      
-  
+Hadoop身份验证插件使Solr能够使用Hadoop身份验证库来保护Solr节点。
+
 此身份验证插件是一个精简的包装，它将所有功能委派给 Hadoop 身份验证库。库的所有配置参数都通过插件传递。  
 这个插件在利用Hadoop身份验证库中的一组扩展功能或新近可用的功能方面特别有用。  
 请注意，Solr使用的Hadoop库版本是定期升级的。虽然Solr将确保插件配置结构（即插件的参数名称）的稳定性和向后兼容性，但这些参数的值可能会根据Hadoop库的版本而改变。有关更多详细信息，请查看您的Solr安装所使用的版本的Hadoop文档。  

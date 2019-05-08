@@ -1,5 +1,6 @@
-## Solr基本身份验证插件 
-<div class="content-intro view-box ">Solr 可以支持用户使用 BasicAuthPlugin 的基本身份验证。  
+# Solr基本身份验证插件
+
+Solr 可以支持用户使用 BasicAuthPlugin 的基本身份验证。  
   
 您还可以使用授权插件来配置Solr，使其具有在系统中执行各种活动的权限。授权插件在“基于规则的授权插件”一节中进行了介绍。  
 

@@ -1,6 +1,20 @@
 # Solr快速概述
 
-Solr 是一个基于Apache Lucene的企业级搜索服务器，是一个开源的、基于Java的信息检索库。  
+Solr 是一个基于Apache Lucene的企业级搜索服务器，是一个开源的、基于Java的信息检索库。
+
+以下是Solr为实现搜索功能提供的一些功能:
+
+- 灵活的查询语法
+- 支持各种格式文件(Word,XML,CSV等)导入并索引,支持数据库数据导入并索引
+- 分页查询和排序
+- Facet维度查询
+- 自动完成功能
+- 拼写检查
+- 搜索关键字高亮显示
+- Geo地理位置查询
+- Group分组查询
+- SolrCloud集群
+
 下面是Solr集成到应用程序中的示例图：
 ![应用集成solr结构图](http://lucene.apache.org/solr/guide/7_0/images/a-quick-overview/sample-client-app-arch.png)  
 Solr与其他服务器应用程序是并行运行。例如，在线商店应用程序将提供用户界面、购物车以及为最终用户购买的方式；而库存管理应用程序将允许商店员工编辑产品信息。产品元数据将保存在某种数据库以及 Solr 中。

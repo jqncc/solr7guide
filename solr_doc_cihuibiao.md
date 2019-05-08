@@ -1,25 +1,19 @@
-## Solr词汇表 
-<div class="content-intro view-box ">
-## Solr词汇表
-
-本节将介绍Solr的常用术语。  
-
-## Solr术语
+# Solr术语
 
 在可能的情况下，术语与Solr参考指南的相关部分相关联，以获取更多信息。
 
-- **原型更新（Atomic updates）**  
+- **原型更新（Atomic updates）**
 一种仅更新文档的一个或多个字段的方法，而不是重新索引整个文档。
 
-- **布尔运算符（Boolean operators）**  
+- **布尔运算符（Boolean operators）**
 这些控件通过使用AND、OR和NOT等运算符来控制查询中关键字的包含或排除。  
 
-- **集群（Cluster）**  
-在Solr中，一个集群是一组Solr节点，通过ZooKeeper彼此协调运行，并作为一个单元进行管理。一个集群可能包含许多集合。参见SolrCloud。  
+- **集群（Cluster）**
+在Solr中，一个集群是一组Solr节点，通过ZooKeeper彼此协调运行，并作为一个单元进行管理。一个集群可能包含许多集合。参见SolrCloud。
     
-- **集合（Collection）**  
+- **集合（Collection）**
 在Solr中，使用单个配置和Schema将一个或多个文档组合在一个逻辑索引中。  
-在SolrCloud中，一个集合可以被分成多个逻辑分片，这些分片又可以分布在多个节点上，或者在单个节点Solr安装中，集合可以是单个Core。  
+在SolrCloud中，一个集合可以被分成多个逻辑分片，这些分片又可以分布在多个节点上，或者在单个节点Solr安装中，集合可以是单个Core。
 
 - **提交（Commit）**  
 使索引中的文档永久更改。在添加文档的情况下，它们将在提交后进行搜索。  
@@ -116,13 +110,13 @@ Solr中的功能提供了在用户键入时向用户建议可能的查询条件�
     
 - **术语频率（Term frequency）**  
 给定文档中出现单词的次数。请参阅：http://en.wikipedia.org/wiki/Tf-idf 和 Lucene TFIDFSimilarity javadocs 以获取更多有关TF-IDF评分和Lucene评分的信息。另请参阅： 反向文档频率（IDF）。  
-    
+
 - **事务日志（Transaction log）**  
 由每个副本维护的只写操作追加日志。这个日志是SolrCloud实现所必需的，由Solr自动创建和管理。  
-    
+
 - **通配符（Wildcard）**  
 通配符允许替换单词的一个或多个字母来解释拼写或时态中可能的变化。  
-    
-- **ZooKeeper**  
+
+- **ZooKeeper**
 也被称为Apache ZooKeeper。SolrCloud使用的系统跟踪群集的配置文件和节点名称。ZooKeeper集群用作集群的中央配置存储，用于需要分布式同步的操作的协调器以及用于集群拓扑的记录系统。另请参见SolrCloud。  
 
