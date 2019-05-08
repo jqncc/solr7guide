@@ -4,10 +4,10 @@ currency类型为Solr/Lucene查询时货币兑换和汇率,提供货币值支持
 
 - Point 查询
 - Range 查询
-- 函数范围（Function range）查询
+- Function区间范围查询
 - 排序
-- 按货币代码或符号进行货币分析
-- 对称和不对称的汇率（如果汇率与交换货币有关，则不对称汇率是有用的）
+- 按货币代号或货币符号(如人民币的￥，美元的$)进行解析
+- 支持对称和不对称的汇率（如果汇率与交换货币有关，则不对称汇率是有用的）
 
 ## 配置货币
 
@@ -74,15 +74,17 @@ currency.xml Solr附带了一个示例文件，该schema.xml文件位于与该�
 </currencyConfig&gt;
 ```
 
-### OpenExchangeRatesOrgProvider<a href="http://lucene.apache.org/solr/guide/7_0/working-with-currencies-and-exchange-rates.html#openexchangeratesorgprovider"/>
+### OpenExchangeRatesOrgProvider
 
-您可以将 Solr 配置为从 OpenExchangeRates.Org 下载汇率，更新率为每小时 170 美元。这些比率只是对称的。  
-在这种情况下，需要在字段类型的定义中指定 providerClass，并注册一个 API 密钥。下面是一个示例:  
-```
+您可以将 Solr 配置为从 OpenExchangeRates.Org 下载汇率，更新率为每小时 170 美元。这些比率只是对称的。
+在这种情况下，需要在字段类型的定义中指定 providerClass，并注册一个 API 密钥。下面是一个示例:
+
+```xml
 <fieldType name="currency" class="solr.CurrencyFieldType"
            amountLongSuffix="_l_ns" codeStrSuffix="_s_ns"
            providerClass="solr.OpenExchangeRatesOrgProvider"
            refreshInterval="60"
            ratesFileLocation="http://www.openexchangerates.org/api/latest.json?app_id=yourPersonalAppIdKey">
 ```
-refreshInterval 是分钟，所以上面的例子将每 60 分钟下载一次最新的费率。刷新间隔可能增加，但不会减少。  
+
+refreshInterval 是分钟，所以上面的例子将每 60 分钟下载一次最新的费率。刷新间隔可能增加，但不会减少。
