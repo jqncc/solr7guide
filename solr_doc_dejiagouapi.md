@@ -1,9 +1,9 @@
-## Solr的架构API 
-<div class="content-intro view-box ">Solr 架构 API 允许您使用 HTTP API 来管理架构中的许多元素。
-      
-  
-Schema API 使用 ManagedIndexSchemaFactory 类，这是现代 Solr 版本中的默认架构工厂。有关为索引选择架构工厂的更多信息，请参阅 SolrConfig 中的架构工厂定义一节。  
-此 API 为每个集合 (或使用独立 solr 时的核心) 提供对 Solr 架构的读取和写入访问权限。支持对所有架构元素的读访问权限。字段、动态字段、字段类型和 copyField规则可以添加、删除或替换。将来的 Solr 版本将扩展写访问权限，以允许修改更多的架构元素。  
+# Solr Schema API
+
+Schema API是为Core/Collection提供对 Solr Schema的读取和写入访问权限。支持对所有架构元素的读访问权限。Field、DynamicField、FieldType和CopyField规则可以添加、删除或替换。将来的 Solr 版本将扩展写访问权限，以允许修改更多的架构元素。
+
+Schema API 使用 ManagedIndexSchemaFactory 实现类，这是Solr当前版本中的默认Schema工厂类。有关为索引选择架构工厂的更多信息，请参阅 SolrConfig 中的架构工厂定义一节。
+此 API   
 为什么不鼓励手动编辑托管架构？在示例配置中名为 "托管架构（managed-schema）" 的文件可能包括一个建议不要手动编辑文件的注释。在架构 API 存在之前, 此类编辑是对架构进行更改的唯一方法，用户可能会强烈的希望继续以这种方式进行更改。  
 之所以不鼓励这样做，是因为如果后面描述的架构 API 被用来进行更改，则可能会丢失对架构的手工编辑，除非在使用架构 API 之前重新加载了核心或启动了Solr。如果在手动编辑后总是重新加载或重新启动, 那么执行这些编辑就没有问题了。  
 API 允许对所有调用的两种输出模式：JSON或XML。在请求完整的架构时，还有另一个输出模式，它是以 xml 格式在托管架构文件本身之后建模的。  
@@ -20,7 +20,7 @@ API 的基本地址为 http://&lt;host&gt;: &lt;port&gt;/solr/&lt;collection_nam
 bin/solr -e cloud -noprompt
 ```
 
-## 架构 API 入口点<a href="http://lucene.apache.org/solr/guide/7_0/schema-api.html#schema-api-entry-points"/>
+## 架构 API 入口点
   
 - /schema：检索架构，或修改架构以添加、删除或替换字段、动态字段、复制字段或字段类型。
 - /schema/fields：检索有关所有定义的字段或特定命名字段的信息。
