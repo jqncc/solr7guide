@@ -14,6 +14,7 @@ Java环境: jre1.8+
 Solr可从Solr网站获取。您可以在此下载最新版本的(当前最新版是8.0)：<https://lucene.apache.org/solr/mirrors-solr-latest-redir.html>  
 7.0下载地址:<http://archive.apache.org/dist/lucene/solr/7.0.0/>  
 Solr有三个独立的软件包:
+
 * solr-7.0.0.tgz：适用于Linux/Unix/OSX 系统
 * solr-7.0.0.zip：适用于Windows 系统
 * solr-7.0.0-src.tgz：Solr源代码包

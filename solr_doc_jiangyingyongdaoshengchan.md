@@ -138,6 +138,7 @@ Solr process PID running on port 8983
 ## 微调您的生产设置
 
 ### 内存和 GC 设置
+
 默认情况下，bin/solr 脚本将最大 Java 堆大小设置为 512M（-Xmx512m），这对于 Solr 入门是很好的。对于生产，您将希望根据您的搜索应用程序的内存需求增加最大堆大小；对于生产服务器，10 到 20 千兆字节的值并不少见。当您需要更改 Solr 服务器的内存设置时，请使用 SOLR_JAVA_MEM 包含文件中的变量，例如：
 
 ```sh
@@ -187,7 +188,7 @@ SOLR_HOST=solr1.example.com
 
 建议设置 Solr 服务器的主机名，尤其是在 SolrCloud 模式下运行时，因为这决定了在向 ZooKeeper 注册时节点的地址。  
 
-### 重写 solrconfig.xml 中的设置
+### 重写solrconfig.xml中的设置
 
 Solr 允许使用 -Dproperty=value 语法在启动时传递的 Java 系统属性重写配置属性。例如，在 solrconfig.xml 中，默认的 "自动软提交" 设置被设置为：
 
