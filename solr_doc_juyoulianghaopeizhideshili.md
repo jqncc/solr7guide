@@ -1,5 +1,6 @@
-## 具有良好配置的Solr实例 
-<div class="content-intro view-box ">本节将告诉您如何优化您的Solr实例以获得最佳性能。  
+# 具有良好配置的Solr实例
+
+本节将告诉您如何优化您的Solr实例以获得最佳性能。  
   
 本节涵盖了以下主题：  
 配置solrconfig.xml：描述如何使用Solr的主配置文件：solrconfig.xml，它覆盖了文件的主要部分。  
