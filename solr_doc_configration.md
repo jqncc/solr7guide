@@ -52,7 +52,7 @@ Solr Home即Solr的主目录,**主目录包含重要的配置信息，是Solr存
 - Solr core:
 
   - core.properties：定义每个核心的特定的属性，例如其名称、核心所属的集合、schema的位置以及其他参数。更多详细信息，请参阅定义 core.properties
-  - solrconfig.xml：控制高级行为。例如，您可以为数据目录指定一个备用位置。有关solrconfig.xml 的更多信息，请参阅配置 solrconfig.xml。
+  - solrconfig.xml：控制高级行为。例如，您可以为数据目录指定一个备用位置。有关solrconfig.xml 的更多信息，请参阅[配置solrconfig.xml](solr_doc_solrconfigxml.md)。
   - managed-schema（或用 schema.xml 替代）描述您将要求Solr索引的文档。Schema将文档定义为字段集合。您可以同时定义字段类型和字段本身。字段类型定义功能强大，包含有关Solr如何处理传入字段值和查询值的信息。有关Solr架构的更多信息，请参阅 [Documents,Fields和Schema设计](solr_doc-ofsstart.md)以及[Schema API](solr_doc_clientapi_overview.md)。
   - data/：包含低级索引文件的目录。
 

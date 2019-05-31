@@ -1,14 +1,10 @@
-# 定义core.properties
+# core.properties
 
-核心发现意味着创建核心就像core.properties在磁盘上的文件一样简单。
+core.properties文件是一个简单的Java属性文件，solr.xml、solrconfig.xml、data-config.xml都可以通过从core.properties中获取参数。core.properties与这些配置文件放在同级目录下即可，如果要自定义它的加载路径可以通过-Dsystem.properties=confi\solrcore.properties系统参数来自定义。
 
-core.properties文件是一个简单的Java属性文件，其中每行只是一个key=value对，例如：name=core1。请注意，不需要使用引号。  
-最小的core.properties文件看起来像下面的例子。但是，它也可以是空的，请参阅有关core.properties的信息。
+## Core自动发现机制
 
-```
-name=my_core_name
-```
-
+当Solr启动时,会在SOLR_HOME目录下递归查找名称为core.properties的配置文件,然后根据core.properties中的配置加载core,一般一个core对应一个core.properties文件.
 
 ## core.properties位置
 
@@ -32,7 +28,7 @@ Solr core是通过在solr.home子目录下放置一个名为core.properties的�
 可以将Solr分割成多个core，每个core都有自己的配置和索引。core可以专用于单个应用程序或非常不同的应用程序，但所有内容都通过一个通用的管理界面进行管理。您可以即时创建新的Solr core，关闭core，甚至可以将一个正在运行的core替换为另一个core，而不用停止或重新启动Solr。
 
 core.properties文件可以是空的。假设core.properties位于./cores/core1（相对于solr_home），但是是空的。在这种情况下，核心名称被假定为“core1”。instanceDir将是包含core.properties（即，./cores/core1）的文件夹。dataDir将会是../cores/core1/data，等等。
->您可以在不配置任何内核的情况下运行 Solr。
+>您可以在不配置任何内核的情况下运行Solr。
 
 
 ## 定义core.properties文件
@@ -80,3 +76,4 @@ SolrCore的名称。在使用CoreAdminHandler运行命令时，您将使用此�
 未来的SolrCloud参数或用户标记节点以供自己使用的方式。  
 
 可以指定其他用户定义的属性作为变量。有关如何定义本地属性的更多信息，请参见替换Solr配置文件中的属性一节。  
+

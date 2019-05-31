@@ -100,7 +100,7 @@ Solr端口,在默认solr.xml文件中，设置为${jetty.port:8983}，将使用J
 在SolrCloud模式下，Solr应该用于群集状态信息的ZooKeeper主机的URL.
 
 - **genericCoreNodeNames**  
- 如果为TRUE，则节点名称不是基于节点的地址，而是基于标识核心的通用名称。当一台不同的机器接管服务的时候，核心的东西就会更容易理解。  
+ 如果为TRUE，则节点名称不是基于节点的地址，而是基于标识core的通用名称。当一台不同的机器接管服务的时候，core的东西就会更容易理解。  
 
 - **zkCredentialsProvider ＆ zkACLProvider**  
 如果使用ZooKeeper访问控制，则可以指定可选参数
@@ -109,7 +109,7 @@ Solr端口,在默认solr.xml文件中，设置为${jetty.port:8983}，将使用J
 ### `<logging>`元素
 
 - **class**  
-用于记录的类。相应的JAR文件必须可用于Solr，也许通过solrconfig.xml中的一个`<lib>`指令。
+用于日志记录的类。相应的JAR文件必须可用于Solr，也许通过solrconfig.xml中的一个`<lib>`指令。
 
 - **enabled**  
 true / false - 是否启用日志记录。
