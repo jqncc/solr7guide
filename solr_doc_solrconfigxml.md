@@ -13,12 +13,12 @@
 
 solrconfig.xml文件位于每个core的conf/目录中。在server/solr/configsets/目录中可以找到几个不同配置的示例文件。  
 
-本章将介绍solrconfig.xml的以下部分：  
+本章将介绍solrconfig.xml的以下部分：
 
-- DataDir和DirectoryFactory
-- Lib指令
-- Schema Factory Definition
-- IndexConfig
+- [DataDir和DirectoryFactory](solr_doc_solrconfigdatadir.md)
+- [lib元素](solr_doc_solrconfiglib.md)
+- [Schema Factory Definition](solr_doc_solrconfig_schemafactory.md)
+- [IndexConfig](solr_doc_solrconfigindexconfig.md)
 - RequestHandlers和SearchComponents
 - InitParams
 - UpdateHandlers 索引更新操作相关配置
